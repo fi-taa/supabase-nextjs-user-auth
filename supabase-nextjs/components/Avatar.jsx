@@ -55,6 +55,11 @@ export default function Avatar({ uid, url, size, onUpload }) {
 
   return (
     <div>
+        <div>
+            <span>home</span>
+        </div>
+        <div>
+            <span><a href="/Account.jsx">profile</a></span>
       {avatarUrl ? (
         <img
           src={avatarUrl}
@@ -65,22 +70,8 @@ export default function Avatar({ uid, url, size, onUpload }) {
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
-      <div style={{ width: size }}>
-        <label className="button primary block" htmlFor="single">
-          {uploading ? 'Uploading ...' : 'Upload'}
-        </label>
-        <input
-          style={{
-            visibility: 'hidden',
-            position: 'absolute',
-          }}
-          type="file"
-          id="single"
-          accept="image/*"
-          onChange={uploadAvatar}
-          disabled={uploading}
-        />
       </div>
+     
     </div>
   )
 }
